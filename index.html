@@ -1,1 +1,258 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empressa de Alunos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="bg-dark text-white text-center p-4">
+        <h1>Bem-vindo à Nossa Empressa</h1>
+        <nav>
+            <ul class="nav justify-content-center">
+                <li class="nav-item"><a class="nav-link text-white" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#sobre">Sobre Nós</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#dados">Dados dos Alunos</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#clubes">Clubes</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#analise">Análise de Desempenho</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#servicos">Serviços</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="text-center p-5">
+        <h2>Início</h2>
+        <p>Conheça nossos alunos e serviços.</p>
+        <img src="imagem.jpeg" alt="Banner" class="img-fluid" width="350px">
+    </section>
+
+    <section id="sobre" class="p-5">
+        <h2>Sobre Nós</h2>
+        <p>Demografia: Total de alunos, com divisão por gêneros e faixas etárias. Desempenho: Média de notas e percentual de aprovações. Atividades: Participação em clubes e eventos escolares. Socioeconômicos: Percentual de alunos com auxílio financeiro e renda média das famílias. Frequência: Taxa de presença e retenção de alunos. Saúde: Programas de apoio psicológico e participação em atividades físicas. Satisfação: Resultados de pesquisas de satisfação dos alunos. Tecnologia: Acesso a dispositivos digitais e programas de tecnologia.</p>
+    </section>
+
+    <section id="dados" class="p-5">
+        <h2>Dados dos Alunos</h2>
+        <input type="text" id="search" class="form-control mb-3" placeholder="Buscar aluno..." onkeyup="searchStudents()">
+        
+        <table id="studentsTable" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Matéria</th>
+                    <th>Nota</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Guilherme de Souza</td>
+                    <td>16</td>
+                    <td>Matemática</td>
+                    <td>9.0</td>
+                </tr>
+                <tr>
+                    <td>Kaique Elias</td>
+                    <td>16</td>
+                    <td>Geografia</td>
+                    <td>8.5</td>
+                </tr>
+                <tr>
+                    <td>João Gabriel</td>
+                    <td>16</td>
+                    <td>Física</td>
+                    <td>8.5</td>
+                </tr>
+                <tr>
+                    <td>Giovanna</td>
+                    <td>16</td>
+                    <td>IMT</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>Kauan</td>
+                    <td>16</td>
+                    <td>Português</td>
+                    <td>9.5</td>
+                </tr>
+                <tr>
+                    <td>Pietro</td>
+                    <td>16</td>
+                    <td>Matemática</td>
+                    <td>9.0</td>
+                </tr>
+                <tr>
+                    <td>Matheus Henrique</td>
+                    <td>16</td>
+                    <td>IMT</td>
+                    <td>10.0</td>
+                </tr>
+                <tr>
+                    <td>Ana Laura</td>
+                    <td>16</td>
+                    <td>Matemática</td>
+                    <td>9.0</td>
+                </tr>
+                <tr>
+                    <td>Maria Laura</td>
+                    <td>16</td>
+                    <td>Geografia</td>
+                    <td>7.0</td>
+                </tr>
+                <tr>
+                    <td>Fernanda Torres</td>
+                    <td>15</td>
+                    <td>PCC</td>
+                    <td>8.0</td>
+                </tr>
+                <tr>
+                    <td>Gustavo Adalthos</td>
+                    <td>15</td>
+                    <td>Química</td>
+                    <td>9.5</td>
+                </tr>
+                <tr>
+                    <td>Izabela</td>
+                    <td>15</td>
+                    <td>História</td>
+                    <td>8.2</td>
+                </tr>
+                <tr>
+                    <td>Pedro Henrique</td>
+                    <td>15</td>
+                    <td>Português</td>
+                    <td>6.0</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Gráfico de Desempenho</h3>
+        <canvas id="performanceChart"></canvas>
+    </section>
+
+    <section id="clubes" class="p-5">
+        <h2>Clubes e Atividades Extracurriculares</h2>
+        <p>Nossos alunos têm a oportunidade de participar de diversos clubes e atividades que estimulam o aprendizado e a socialização.</p>
+        <ul>
+            <li><strong>Clube de Ciências:</strong> Projetos de pesquisa e experimentos.</li>
+            <li><strong>Clube de Literatura:</strong> Leituras e discussões sobre obras clássicas e contemporâneas.</li>
+            <li><strong>Clube de Teatro:</strong> Produções teatrais e desenvolvimento de habilidades de comunicação.</li>
+            <li><strong>Clube de Esportes:</strong> Competições e práticas de diversas modalidades.</li>
+            <li><strong>Clube de Tecnologia:</strong> Workshops sobre programação e inovação tecnológica.</li>
+        </ul>
+    </section>
+
+    <section id="analise" class="p-5">
+        <h2>Análise de Desempenho Acadêmico</h2>
+        <p>Nosso desempenho acadêmico é monitorado de perto. Aqui estão algumas estatísticas relevantes:</p>
+        <ul>
+            <li>Média geral de notas: 8.5</li>
+            <li>Percentual de alunos aprovados: 85%</li>
+            <li>Alunos com nota acima de 9: 50%</li>
+            <li>Alunos com auxílio financeiro: 20%</li>
+            <li>Participação em atividades extracurriculares: 75%</li>
+        </ul>
+    </section>
+
+    <section id="servicos" class="p-5">
+        <h2>Serviços</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Tutoria</h3>
+                <p>Apoio individualizado para alunos que precisam de assistência extra.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Workshops</h3>
+                <p>Eventos mensais para desenvolvimento de habilidades práticas.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Consultoria</h3>
+                <p>Aconselhamento acadêmico e orientação profissional para os alunos.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="p-5">
+        <h2>Contato</h2>
+        <form id="contactForm" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" class="form-control" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </section>
+
+    <section id="localizacao" class="p-5">
+    <h2>Localização</h2>
+    <p>Escola Frei Edigio Parisi<br>
+    Endereço: Av. Dr. Laérte Viêira Gonçalves, 2926 - Santa Mônica, Uberlândia - MG, 38408-273</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3868.4219203144313!2d-48.2270468!3d-18.9278966!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a44fec57ce3225%3A0x836b6c20e6753e4!2sAv.+Dr.+La%C3%A9rte+Vi%C3%AAira+Gon%C3%A7alves%2C+2926+-+Santa+M%C3%B4nica%2C+Uberl%C3%A2ndia+-+MG%2C+38408-273!5e0!3m2!1spt-BR!2sbr!4v1635189709182!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</section>
+
+
+    <footer class="bg-dark text-white text-center p-4">
+        <p>&copy; 2024 Nossa Impressa. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Função para buscar alunos
+        function searchStudents() {
+            const input = document.getElementById('search').value.toLowerCase();
+            const table = document.getElementById('studentsTable');
+            const rows = table.getElementsByTagName('tr');
+
+            for (let i = 1; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName('td');
+                let found = false;
+
+                for (let j = 0; j < cells.length; j++) {
+                    if (cells[j].textContent.toLowerCase().includes(input)) {
+                        found = true;
+                        break;
+                    }
+                }
+                rows[i].style.display = found ? '' : 'none';
+            }
+        }
+
+        // Gráfico de Desempenho
+        const ctx = document.getElementById('performanceChart').getContext('2d');
+        const performanceChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Guilherme', 'Kaique', 'João', 'Giovanna', 'Kauan', 'Pietro', 'Matheus', 'Ana', 'Maria', 'Fernanda', 'Gustavo', 'Izabela', 'Pedro'],
+                datasets: [{
+                    label: 'Notas',
+                    data: [9.0, 8.5, 8.5, 10, 9.5, 9.0, 10, 9.0, 7.0, 8.0, 9.5, 8.2, 6.0],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
